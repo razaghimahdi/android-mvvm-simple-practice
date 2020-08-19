@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mvvmudemy01.view.Part01ViewModelActivity;
 import com.example.mvvmudemy01.R;
 import com.example.mvvmudemy01.model.infoMain;
+import com.example.mvvmudemy01.view.Part02RoomdbActivity;
 
 import java.util.Collections;
 import java.util.List;
@@ -72,6 +73,10 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                 public void onClick(View view) {
                     if (getPosition() == 0){
                         Intent intent = new Intent(context, Part01ViewModelActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 1){
+                        Intent intent = new Intent(context, Part02RoomdbActivity.class);
                         context.startActivity(intent);
                     }
 

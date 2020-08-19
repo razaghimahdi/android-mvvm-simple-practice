@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="right|center|top"
+    tools:context=".view.Part02RoomdbActivity"
+    android:background="#E6E6E6">
+
+    <LinearLayout
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/gotoroomdb"
+        android:background="#FFF"
+        android:gravity="right|center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="RoomDB"
+            android:padding="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C8C8C8"/>
+
+    <LinearLayout
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/gotosqlite"
+        android:background="#FFF"
+        android:gravity="right|center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="SqliteDB"
+            android:padding="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
