@@ -16,7 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mvvmudemy01.view.Part01ViewModelActivity;
 import com.example.mvvmudemy01.R;
 import com.example.mvvmudemy01.model.infoMain;
-import com.example.mvvmudemy01.view.Part02RoomdbActivity;
+import com.example.mvvmudemy01.view.Part03DataBindingActivity;
+import com.example.mvvmudemy01.view.Part04ProjectActivity;
+import com.example.mvvmudemy01.view.roomView.Part02RoomdbActivity;
+import com.example.mvvmudemy01.viewmodel.Part04ViewModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -77,6 +80,14 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                     }
                     if (getPosition() == 1){
                         Intent intent = new Intent(context, Part02RoomdbActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 2){
+                        Intent intent = new Intent(context, Part03DataBindingActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 3){
+                        Intent intent = new Intent(context, Part04ProjectActivity.class);
                         context.startActivity(intent);
                     }
 

@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Part02_1RoomdbActivity"></activity>
-        <activity android:name=".view.Part02_2RoomdbMainActivity" />
-        <activity android:name=".view.Part02RoomdbActivity" />
+        <activity android:name=".view.Part04ProjectActivity"></activity>
+        <activity android:name=".view.Part03DataBindingActivity" />
+        <activity android:name=".view.roomView.Part02_1RoomdbActivity" />
+        <activity android:name=".view.roomView.Part02_2RoomdbActivity" />
+        <activity android:name=".view.roomView.Part02RoomdbActivity" />
         <activity android:name=".view.Part01ViewModelActivity" />
         <activity android:name=".view.MainActivity">
             <intent-filter>

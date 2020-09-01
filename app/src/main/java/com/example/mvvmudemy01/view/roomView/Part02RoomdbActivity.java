@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.view;
+package com.example.mvvmudemy01.view.roomView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,7 +31,7 @@ public class Part02RoomdbActivity extends AppCompatActivity {
         gotosqlite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Part02RoomdbActivity.this,Part02_2RoomdbMainActivity.class));
+                startActivity(new Intent(Part02RoomdbActivity.this, Part02_2RoomdbActivity.class));
             }
         });
 

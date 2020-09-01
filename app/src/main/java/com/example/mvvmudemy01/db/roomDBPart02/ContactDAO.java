@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.db;
+package com.example.mvvmudemy01.db.roomDBPart02;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.mvvmudemy01.model.ContactRoomDB;
+import com.example.mvvmudemy01.model.roomModel.ContactRoomDB;
 
 import java.util.List;
 

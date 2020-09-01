@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.model;
+package com.example.mvvmudemy01.model.roomModel;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

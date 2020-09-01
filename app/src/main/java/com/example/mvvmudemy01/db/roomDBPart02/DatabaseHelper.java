@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.db;
+package com.example.mvvmudemy01.db.roomDBPart02;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-import com.example.mvvmudemy01.model.ContactSQLite;
+import com.example.mvvmudemy01.model.roomModel.ContactSQLite;
 
 import java.util.ArrayList;
 

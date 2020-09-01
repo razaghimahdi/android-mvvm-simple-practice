@@ -1,16 +1,20 @@
-package com.example.mvvmudemy01.view;
+package com.example.mvvmudemy01.view.roomView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -18,12 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mvvmudemy01.R;
-import com.example.mvvmudemy01.adapter.ContactsRoomAdapter;
-import com.example.mvvmudemy01.adapter.ContactsSQLiteAdapter;
-import com.example.mvvmudemy01.db.ContactAppDatabase;
-import com.example.mvvmudemy01.db.DatabaseHelper;
-import com.example.mvvmudemy01.model.ContactRoomDB;
-import com.example.mvvmudemy01.model.ContactSQLite;
+import com.example.mvvmudemy01.adapter.roomAdapter.ContactsRoomAdapter;
+import com.example.mvvmudemy01.db.roomDBPart02.ContactAppDatabase;
+import com.example.mvvmudemy01.model.roomModel.ContactRoomDB;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class Part02_1RoomdbActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.recycler_view_contacts);
-        contactAppDatabase = Room.databaseBuilder(getApplicationContext(), ContactAppDatabase.class,"ContactRoomDB")/*.allowMainThreadQueries()*/.build();
+        contactAppDatabase = Room.databaseBuilder(getApplicationContext(), ContactAppDatabase.class,"ContactRoomDB")/*.allowMainThreadQueries()*/.addCallback(callback).build();
 
 
         new GetAllContactAsyncTask().execute();
@@ -254,5 +255,26 @@ public class Part02_1RoomdbActivity extends AppCompatActivity {
 
         }
     }
+
+
+
+    RoomDatabase.Callback callback = new RoomDatabase.Callback() {
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+            Log.d("TAG", "onCreate: "+db.toString());
+
+            createContact("name 1","email 1");
+            createContact("name 2","email 2");
+            createContact("name 3","email 3");
+        }
+
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            Log.d("TAG", "onOpen: "+db.toString());
+        }
+    };
+
 
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="secondarySpinnerAdapter"
+            type="android.widget.ArrayAdapter" />
+        <variable
+            name="secondaryClickHandler"
+            type="com.example.mvvmudemy01.view.Part04ProjectActivity.Part04ClickHandlers" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            app:adapter="@{secondarySpinnerAdapter}"
+            android:onItemSelected="@{secondaryClickHandler::onSelectItem}"/>
+
+
+
+
+    </LinearLayout>
+
+</layout>

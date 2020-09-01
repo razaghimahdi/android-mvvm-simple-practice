@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.adapter;
+package com.example.mvvmudemy01.adapter.roomAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,21 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mvvmudemy01.R;
-import com.example.mvvmudemy01.model.ContactSQLite;
-import com.example.mvvmudemy01.view.Part02_2RoomdbMainActivity;
+import com.example.mvvmudemy01.model.roomModel.ContactRoomDB;
+import com.example.mvvmudemy01.view.roomView.Part02_1RoomdbActivity;
 
 import java.util.ArrayList;
 
 
-public class ContactsSQLiteAdapter extends RecyclerView.Adapter<ContactsSQLiteAdapter.MyViewHolder> {
+public class ContactsRoomAdapter extends RecyclerView.Adapter<ContactsRoomAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList<ContactSQLite> contactssList;
-    private Part02_2RoomdbMainActivity mainActivity;
+    private ArrayList<ContactRoomDB> contactssList;
+    private Part02_1RoomdbActivity mainActivity;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -37,7 +36,7 @@ public class ContactsSQLiteAdapter extends RecyclerView.Adapter<ContactsSQLiteAd
     }
 
 
-    public ContactsSQLiteAdapter(Context context, ArrayList<ContactSQLite> contactSQLites, Part02_2RoomdbMainActivity mainActivity) {
+    public ContactsRoomAdapter(Context context, ArrayList<ContactRoomDB> contactSQLites, Part02_1RoomdbActivity mainActivity) {
         this.context = context;
         this.contactssList = contactSQLites;
         this.mainActivity = mainActivity;
@@ -55,7 +54,7 @@ public class ContactsSQLiteAdapter extends RecyclerView.Adapter<ContactsSQLiteAd
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
 
-        final ContactSQLite contactSQLite = contactssList.get(position);
+        final ContactRoomDB contactSQLite = contactssList.get(position);
 
         holder.name.setText(contactSQLite.getName());
         holder.emil.setText(contactSQLite.getEmail());

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Part02_2RoomdbMainActivity">
+    android:background="#EAEAEA"
+    tools:context=".view.roomView.Part02_2RoomdbActivity">
 
 
     <include layout="@layout/content_main" />

@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.model;
+package com.example.mvvmudemy01.model.roomModel;
 
 public class ContactSQLite {
 

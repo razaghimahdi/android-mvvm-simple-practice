@@ -1,4 +1,4 @@
-package com.example.mvvmudemy01.view;
+package com.example.mvvmudemy01.view.roomView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,14 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mvvmudemy01.R;
-import com.example.mvvmudemy01.adapter.ContactsSQLiteAdapter;
-import com.example.mvvmudemy01.db.DatabaseHelper;
-import com.example.mvvmudemy01.model.ContactSQLite;
+import com.example.mvvmudemy01.adapter.roomAdapter.ContactsSQLiteAdapter;
+import com.example.mvvmudemy01.db.roomDBPart02.DatabaseHelper;
+import com.example.mvvmudemy01.model.roomModel.ContactSQLite;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class Part02_2RoomdbMainActivity extends AppCompatActivity {
+public class Part02_2RoomdbActivity extends AppCompatActivity {
 
 
     private ContactsSQLiteAdapter contactsSQLiteAdapter;
@@ -45,7 +45,7 @@ public class Part02_2RoomdbMainActivity extends AppCompatActivity {
 
         contactSQLiteArrayList.addAll(db.getAllContacts());
 
-        contactsSQLiteAdapter = new ContactsSQLiteAdapter(this, contactSQLiteArrayList, Part02_2RoomdbMainActivity.this);
+        contactsSQLiteAdapter = new ContactsSQLiteAdapter(this, contactSQLiteArrayList, Part02_2RoomdbActivity.this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -71,7 +71,7 @@ public class Part02_2RoomdbMainActivity extends AppCompatActivity {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
         View view = layoutInflaterAndroid.inflate(R.layout.layout_add_contact, null);
 
-        AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(Part02_2RoomdbMainActivity.this);
+        AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(Part02_2RoomdbActivity.this);
         alertDialogBuilderUserInput.setView(view);
 
         TextView contactTitle = view.findViewById(R.id.new_contact_title);
@@ -117,7 +117,7 @@ public class Part02_2RoomdbMainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (TextUtils.isEmpty(newContact.getText().toString())) {
-                    Toast.makeText(Part02_2RoomdbMainActivity.this, "Enter contact name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Part02_2RoomdbActivity.this, "Enter contact name!", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     alertDialog.dismiss();

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="spinnerAdapter"
+            type="android.widget.ArrayAdapter" />
+
+        <variable
+            name="clickHandlers"
+            type="com.example.mvvmudemy01.view.Part04ProjectActivity.Part04ClickHandlers" />
+    </data>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Part04ProjectActivity">
+
+    <include layout="@layout/content_part04"
+        android:id="@+id/part04_secondary_layout"
+        bind:secondarySpinnerAdapter="@{spinnerAdapter}"
+        bind:secondaryClickHandler="@{clickHandlers}"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="#fff"
+        android:onClick="@{clickHandlers::onFABClicked}"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </layout>
