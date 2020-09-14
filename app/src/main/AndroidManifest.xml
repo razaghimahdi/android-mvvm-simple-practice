@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mvvmudemy01">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Part04ProjectActivity"></activity>
+        <activity
+            android:name=".view.part05.MovieDetailMvvmActivity"
+            android:label="@string/title_activity_movie_detail_mvvm"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".view.part05.Part05MovieListMvvmActivity" />
+        <activity
+            android:name=".view.part05.MovieDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.part05.Part05MovieListActivity" />
+        <activity android:name=".view.part05.Part05UserActivity" />
+        <activity android:name=".view.part05.Part05CountrySearchActivity" />
+        <activity android:name=".view.part05.Part05CountryListActivity" />
+        <activity android:name=".view.Part05Activity" />
+        <activity android:name=".view.part04.Part04AddAndEditActivity" />
+        <activity android:name=".view.Part04ProjectActivity" />
         <activity android:name=".view.Part03DataBindingActivity" />
         <activity android:name=".view.roomView.Part02_1RoomdbActivity" />
         <activity android:name=".view.roomView.Part02_2RoomdbActivity" />

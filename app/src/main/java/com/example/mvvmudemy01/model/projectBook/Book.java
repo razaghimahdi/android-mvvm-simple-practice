@@ -1,5 +1,8 @@
 package com.example.mvvmudemy01.model.projectBook;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.room.ColumnInfo;
@@ -8,6 +11,8 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import com.example.mvvmudemy01.BR;
+
+import java.util.Objects;
 
 import static androidx.room.ForeignKey.CASCADE;
 
@@ -77,5 +82,22 @@ public class Book extends BaseObservable {
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
         notifyPropertyChanged(BR.categoryId);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return bookId == book.bookId &&
+                categoryId == book.categoryId &&
+                bookName.equals(book.bookName) &&
+                unitPrice.equals(book.unitPrice);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookId, bookName, unitPrice, categoryId);
     }
 }

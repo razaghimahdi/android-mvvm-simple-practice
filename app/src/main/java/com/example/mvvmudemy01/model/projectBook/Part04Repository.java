@@ -10,6 +10,8 @@ import com.example.mvvmudemy01.db.projectPart04.BookDataBase;
 import com.example.mvvmudemy01.db.projectPart04.CategoryDAO;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class Part04Repository {
 
@@ -37,9 +39,18 @@ public class Part04Repository {
 
     public void insertCategory(Category category){
 
-        new InsertCategoryAsyncTask(categoryDAO).execute(category);
-    }
+        //new InsertCategoryAsyncTask(categoryDAO).execute(category);
 
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                categoryDAO.insert(category);
+            }
+        });
+
+    }
+/*
     private static class InsertCategoryAsyncTask extends AsyncTask<Category,Void,Void> {
         private CategoryDAO categoryDAO;
 
@@ -54,12 +65,21 @@ public class Part04Repository {
             return null;
         }
     }
-
+*/
     public void insertBook(Book book){
 
-        new InsertBookAsyncTask(bookDAO).execute(book);
-    }
+       // new InsertBookAsyncTask(bookDAO).execute(book);
 
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                bookDAO.insert(book);
+            }
+        });
+
+    }
+/*
     private static class InsertBookAsyncTask extends AsyncTask<Book,Void,Void>{
         private BookDAO bookDAO;
 
@@ -74,7 +94,7 @@ public class Part04Repository {
             return null;
         }
     }
-
+*/
     public void deleteCategory(Category category){
 
         new DeleteCategoryAsyncTask(categoryDAO).execute(category);
