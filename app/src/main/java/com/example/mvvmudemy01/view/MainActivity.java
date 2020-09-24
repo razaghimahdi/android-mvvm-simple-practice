@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<infoMain> getdata() {
         List<infoMain> data = new ArrayList<>();
-        String title[] = {"ViewModel-LiveData","Room DB","Data-Binding","Simple-Project","Retrofit"};
+        String title[] = {"ViewModel-LiveData","Room DB","Data-Binding","Simple-Project","Retrofit","Paging"};
 
 
         for (int i = 0; i < title.length ; i++) {
