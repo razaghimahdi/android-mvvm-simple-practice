@@ -20,6 +20,8 @@ import com.example.mvvmudemy01.view.Part03DataBindingActivity;
 import com.example.mvvmudemy01.view.Part04ProjectActivity;
 import com.example.mvvmudemy01.view.Part05Activity;
 import com.example.mvvmudemy01.view.Part06PagingActivity;
+import com.example.mvvmudemy01.view.part07.Part07WorkManagerActivity;
+import com.example.mvvmudemy01.view.part08.Part08NavigationActivity;
 import com.example.mvvmudemy01.view.roomView.Part02RoomdbActivity;
 import com.example.mvvmudemy01.viewmodel.Part04ViewModel;
 
@@ -99,6 +101,15 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                     }
                     if (getPosition() == 5){
                         Intent intent = new Intent(context, Part06PagingActivity.class);
+                        context.startActivity(intent);
+                    }
+
+                    if (getPosition() == 6){
+                        Intent intent = new Intent(context, Part07WorkManagerActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (getPosition() == 7){
+                        Intent intent = new Intent(context, Part08NavigationActivity.class);
                         context.startActivity(intent);
                     }
 

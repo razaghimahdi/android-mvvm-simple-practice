@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Part06PagingActivity"></activity>
+        <activity android:name=".view.part08.Part08NavigationActivity"></activity>
+        <activity android:name=".view.part07.Part07WorkManagerActivity" />
+        <activity android:name=".view.Part06PagingActivity" />
         <activity
             android:name=".view.part05.MovieDetailMvvmActivity"
             android:label="@string/title_activity_movie_detail_mvvm"

@@ -21,20 +21,6 @@ public class ContactsRoomAdapter extends RecyclerView.Adapter<ContactsRoomAdapte
     private ArrayList<ContactRoomDB> contactssList;
     private Part02_1RoomdbActivity mainActivity;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView name;
-        public TextView emil;
-
-
-        public MyViewHolder(View view) {
-            super(view);
-            name = view.findViewById(R.id.name);
-            emil = view.findViewById(R.id.email);
-
-        }
-    }
-
 
     public ContactsRoomAdapter(Context context, ArrayList<ContactRoomDB> contactSQLites, Part02_1RoomdbActivity mainActivity) {
         this.context = context;
@@ -77,6 +63,20 @@ public class ContactsRoomAdapter extends RecyclerView.Adapter<ContactsRoomAdapte
         return contactssList.size();
     }
 
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView name;
+        public TextView emil;
+
+
+        public MyViewHolder(View view) {
+            super(view);
+            name = view.findViewById(R.id.name);
+            emil = view.findViewById(R.id.email);
+
+        }
+    }
 
 }
 
