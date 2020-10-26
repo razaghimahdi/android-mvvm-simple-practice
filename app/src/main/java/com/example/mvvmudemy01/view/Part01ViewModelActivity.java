@@ -22,6 +22,20 @@ import java.util.List;
 
 public class Part01ViewModelActivity extends AppCompatActivity {
 
+    /**NOTE:
+     * When we are developing professional level Android application,
+     * one the most common thing you need to consider is configuration changes.
+     * What are the Configuration changes?
+     * Example: Screen rotations, keyboard changes, language changes, Enabling multi window mode.
+     * When a configuration change happen app has to destroy and recreate the activity with new configurations.
+     * */
+
+    /**NOTE 02:
+     * ViewModel creates in memory, when the activity creates, it lives until activity cleared from the memory.
+     * So viewModel can hold values belong to the activity.
+     * */
+
+
     private int clickCountnot = 0;
 
     Part01ViewModel part01ViewModel;

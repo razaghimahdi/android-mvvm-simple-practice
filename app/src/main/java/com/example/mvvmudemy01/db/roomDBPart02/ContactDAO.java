@@ -10,11 +10,11 @@ import com.example.mvvmudemy01.model.roomModel.ContactRoomDB;
 
 import java.util.List;
 
-@Dao
+@Dao/**NOTE:  Marks the interface as a data access object(DAO).*/
 public interface ContactDAO {
 
     @Insert
-    public long addContact(ContactRoomDB contact);
+    public long addContact(ContactRoomDB contact);/**NOTE: in ContactRoomDB,we defined a long field as the primary key(id).So the return type of this method should be long*/
 
     @Update
     public void updateContact(ContactRoomDB contact);
@@ -24,7 +24,6 @@ public interface ContactDAO {
 
     @Query("SELECT * FROM 'contacts-room'")
     public List<ContactRoomDB> getContacts();
-
 
     @Query("SELECT * FROM `contacts-room` WHERE contact_id == :contactId")
     public ContactRoomDB getContact(long contactId);

@@ -31,6 +31,14 @@ import java.util.ArrayList;
 
 public class Part02_1RoomdbActivity extends AppCompatActivity {
 
+    /**NOTE:
+     * Room is a Database layer on top of SQLite database.
+     * Room takes care of tasks that we used to handle with the SQLiteOpenHelper.
+     * Room acts as an access point to the underlying SQLite Database.
+     * Room uses Data Access Objects(DAO) to issue queries to the SQLite database.
+     * */
+
+
 
     private ContactsRoomAdapter contactsRoomAdapter;
     private ArrayList<ContactRoomDB> contactRoomArrayList = new ArrayList<>();
@@ -45,7 +53,9 @@ public class Part02_1RoomdbActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.recycler_view_contacts);
-        contactAppDatabase = Room.databaseBuilder(getApplicationContext(), ContactAppDatabase.class,"ContactRoomDB")/*.allowMainThreadQueries()*/.addCallback(callback).build();
+        contactAppDatabase = Room.databaseBuilder(getApplicationContext(), ContactAppDatabase.class,"ContactRoomDB")
+                /*.allowMainThreadQueries()*//**NOTE: this allowed us to run all database related processes on the main thread.*/
+                .addCallback(callback).build();
 
 
         new GetAllContactAsyncTask().execute();
@@ -257,6 +267,12 @@ public class Part02_1RoomdbActivity extends AppCompatActivity {
     }
 
 
+    /**NOTE:
+     * we gonna execute some code part with Room after database has been created and run some codes every time database is opened.
+     * RoomDatabase.Callback has two call back methods: onCreate and onOpen.
+     * onCreate: when our app creates a new database,onCreate will be called.
+     * onOpen: when our app opens an existing database, onOpen will be called.
+     * */
 
     RoomDatabase.Callback callback = new RoomDatabase.Callback() {
         @Override
