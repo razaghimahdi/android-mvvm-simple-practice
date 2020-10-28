@@ -10,6 +10,14 @@ import com.example.mvvmudemy01.service.MovieDataServicePart06;
 
 public class MovieDataSourceFactoryPart06 extends DataSource.Factory {
 
+    /**NOTE:
+     * Data Source Factory:
+     * Data source factory is responsible for retrieving the data using the data source.
+     *
+     * The purpose of this factory class is constructing a MovieDataSource instance and return it as live data.
+     * */
+
+
     private MovieDataServicePart06 movieDataService;
     private MovieDataSourcePart06 movieDataSource;
     private MutableLiveData<MovieDataSourcePart06> mutableLiveData;
@@ -24,7 +32,7 @@ public class MovieDataSourceFactoryPart06 extends DataSource.Factory {
 
     @NonNull
     @Override
-    public DataSource create() {
+    public DataSource create() {/**NOTE: This overridden create method here to construct the MovieDataSource instance.*/
         movieDataSource=new MovieDataSourcePart06(movieDataService,application);
         mutableLiveData.postValue(movieDataSource);
         return movieDataSource;

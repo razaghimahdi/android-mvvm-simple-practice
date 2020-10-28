@@ -20,8 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoviePaging extends BaseObservable implements Parcelable
-{
+public class MoviePaging extends BaseObservable implements Parcelable {
 
     @SerializedName("vote_count")
     @Expose
@@ -44,10 +43,11 @@ public class MoviePaging extends BaseObservable implements Parcelable
     @SerializedName("poster_path")
     @Expose
     private String posterPath;
-    @BindingAdapter({"posterPath"})
-    public static void loadImage(ImageView imageView,String imageURL){
 
-        String imagePath="https://image.tmdb.org/t/p/w500"+imageURL;
+    @BindingAdapter({"posterPath"})
+    public static void loadImage(ImageView imageView, String imageURL) {
+
+        String imagePath = "https://image.tmdb.org/t/p/w500" + imageURL;
 
         Glide.with(imageView.getContext())
                 .load(imagePath)
@@ -56,9 +56,6 @@ public class MoviePaging extends BaseObservable implements Parcelable
 
 
     }
-
-
-
 
 
     @SerializedName("original_language")
@@ -96,8 +93,7 @@ public class MoviePaging extends BaseObservable implements Parcelable
             return (new MoviePaging[size]);
         }
 
-    }
-            ;
+    };
 
     protected MoviePaging(Parcel in) {
         this.voteCount = ((Integer) in.readValue((Integer.class.getClassLoader())));
@@ -282,18 +278,20 @@ public class MoviePaging extends BaseObservable implements Parcelable
     }
 
 
-    public static final DiffUtil.ItemCallback<MoviePaging> CALLBACK=new DiffUtil.ItemCallback<MoviePaging>() {
+    public static final DiffUtil.ItemCallback<MoviePaging> CALLBACK = new DiffUtil.ItemCallback<MoviePaging>() {
         @Override
         public boolean areItemsTheSame(@NonNull MoviePaging oldItem, @NonNull MoviePaging newItem) {
-            return oldItem==newItem;
+            // return oldItem==newItem;
+            return oldItem.id == newItem.id;/**NOTE: if both items have the same id then diffutil will check their content for confirmation.*/
         }
 
         @Override
         public boolean areContentsTheSame(@NonNull MoviePaging oldItem, @NonNull MoviePaging newItem) {
-            return true;
+            /**NOTE: to implement areContentsTheSame method ,
+             we have to write codes to compare each attributes of two movie instances one by one*/
+            return true;/**SO THIS IS NOT COMPLETE!*/
         }
     };
-
 
 
 }

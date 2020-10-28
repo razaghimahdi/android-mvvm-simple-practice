@@ -17,7 +17,7 @@ import java.util.Objects;
 import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "book_table",foreignKeys = @ForeignKey(entity = Category.class,
-parentColumns = "id",childColumns = "category_id",onDelete = CASCADE))
+parentColumns = "id",childColumns = "category_id",onDelete = CASCADE))/**NOTE: if a category deletes, all the books belong to the category should also delete*/
 
 public class Book extends BaseObservable {
 

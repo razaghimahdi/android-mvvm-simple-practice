@@ -30,6 +30,19 @@ import java.util.List;
 
 public class Part06PagingActivity extends AppCompatActivity {
 
+
+    /** NOTE: Paging Library makes it easier for our app to step by step load information as needed from a data source.
+     * Paging Library has mainly created for situations where we send a list to the UI as LiveData that is observed by the RecyclerView's Adapter
+     * Advantages:
+     * App consumes less network bandwidth and fewer system resources.
+     * App works efficiently, data loading time has minimized.
+     * During updates and refreshes app behaves normal and respond quickly.
+     * Paging library is easier to code.
+     * */
+
+
+
+    //private ArrayList<MoviePaging> movies;
     private PagedList<MoviePaging> movies;
     private RecyclerView recyclerView;
     private MovieAdapterPaging movieAdapter;

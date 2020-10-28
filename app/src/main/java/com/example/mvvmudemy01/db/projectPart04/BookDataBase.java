@@ -26,10 +26,9 @@ public abstract class BookDataBase extends RoomDatabase {
         if (instanse == null){
             instanse = Room.databaseBuilder(context.getApplicationContext(),
             BookDataBase.class,"books_database")
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration()/**NOTE: this means when we are changing the version number, when we are migrating data,this will delete the database table and recreate the table*/
                     .addCallback(callback)
                     .build();
-
         }
         return instanse;
     }
@@ -176,6 +175,8 @@ public abstract class BookDataBase extends RoomDatabase {
 
             return null;
         }
+
+
     }
 
 

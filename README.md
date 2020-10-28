@@ -60,7 +60,20 @@ WorkManager choose the best way to run your task based on different factors such
 This library makes it easier to load data to a recyclerView, step by step in your app using live data.
 This supports both large bounded list and unbounded lists, such as continuously updating feeds.
 Paging Library helps you to observe and display a reasonable subset of your data at a time, rather than loading all the data at once.
+Advantages:
+App consumes less network bandwidth and fewer system resources.
+App works efficiently, data loading time has minimized.
+During updates and refreshes app behaves normal and respond quickly.
+Paging library is easier to code.
 
+There are 3 main classes to consider when you are working with paging library:PagedListAdapter, PagedList and DataSource.
+PagedListAdapter class extends the RecyclerViewAdapter class so we should replace it in the adapter.
+PagedList is for loading the data automatically, this allows you to configure the initial load size, the page size, and also the pre fetch distance.
+DataSource is an interface to provide the data step by step,it is the base class comes with paging library for data loading,
+Paging Library also hsa 3 implementations of the base DataSource class:
+PageKeyedDataSource:if we are going to pass page number as a query parameter in the request we can use PageKeyedDataSource.
+ItemKeyedDataSource:if we are going to fetch data using a key belong to an item. as an example, in our project if we are going the fetch data using the id of movies we can use ItemKeyedDataSource.
+PositionalDataSource:if we have a data source with a known fixed size, and we are going to fetch items with arbitrary positions we can use PositionalDataSource.
 
 
 <img src="screenshots/Screenshot_1601712592.png" width="300">

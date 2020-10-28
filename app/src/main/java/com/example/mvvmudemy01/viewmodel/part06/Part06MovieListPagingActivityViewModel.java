@@ -37,11 +37,11 @@ public class Part06MovieListPagingActivityViewModel extends AndroidViewModel {
         MovieDataSourceFactoryPart06 factory = new MovieDataSourceFactoryPart06(movieDataService,application);
         movieDataSourcePart06LiveData = factory.getMutableLiveData();
 
-        PagedList.Config config = (new PagedList.Config.Builder())
-                .setEnablePlaceholders(true)
-                .setInitialLoadSizeHint(10)
-                .setPageSize(20)
-                .setPrefetchDistance(4)
+        PagedList.Config config = (new PagedList.Config.Builder())/**NOTE: PagedList is a special list we create when we are using paging library to hold our data items.*/
+                .setEnablePlaceholders(true)/**NOTE: if we want to have a placeholder that is visible to the user till the data is fully loaded*/
+                .setInitialLoadSizeHint(10)/**NOTE: the number of items to load initially can be defined using setInitialLoadSizeHint.*/
+                .setPageSize(20)/**the number of items to load in the PagedList can be defined using setPageSize*/
+                .setPrefetchDistance(4)/**Number of pages to load initially when the screen loads can be defined using setPreFetchDistance.*/
                 .build();
 
         executor = Executors.newFixedThreadPool(5);

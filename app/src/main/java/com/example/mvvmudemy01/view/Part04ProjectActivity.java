@@ -32,6 +32,12 @@ import java.util.List;
 
 public class Part04ProjectActivity extends AppCompatActivity {
 
+    /**NOTE:
+     *DiffUtil is a utility class that calculates the difference between two lists and outputs a list of update operations that converts the first list into the second one.
+     * It can be used to calculate updates for a RecyclerView Adapter. See ListAdapter and AsyncListDiffer which can simplify the use of DiffUtil on a background thread.
+     * */
+
+
     private Part04ViewModel part04ViewModel;
     private ActivityPart04Project2Binding activityPart04Project2Binding;
     private Part04ClickHandlers handlers;

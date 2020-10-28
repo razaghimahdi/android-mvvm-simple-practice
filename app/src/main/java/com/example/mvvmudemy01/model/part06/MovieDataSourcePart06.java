@@ -26,6 +26,7 @@ public class MovieDataSourcePart06 extends PageKeyedDataSource<Long, MoviePaging
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Long> params, @NonNull LoadInitialCallback<Long, MoviePaging> callback) {
+        /**NOTE: the loadInitial method is there to write codes to fetch the first page.*/
 
         movieDataServicePart06 = RetrofitInstanceMoviePaging.getService();
         Call<MovieDBResponsePaging> call = movieDataServicePart06.getPopularMoviesWithPaging(application.getApplicationContext().getString(R.string.api_key), 1);
@@ -38,10 +39,9 @@ public class MovieDataSourcePart06 extends PageKeyedDataSource<Long, MoviePaging
                 movies = (ArrayList<MoviePaging>) movieDBResponsePaging.getMovies();
                 if (movieDBResponsePaging != null && movieDBResponsePaging.getMovies() != null) {
 
-                callback.onResult(movies, null, (long) 2);
+                    callback.onResult(movies, null, (long) 2);
 
-
-            }
+                }
             }
 
             @Override
@@ -60,6 +60,7 @@ public class MovieDataSourcePart06 extends PageKeyedDataSource<Long, MoviePaging
 
     @Override
     public void loadAfter(@NonNull final LoadParams<Long> params, @NonNull final LoadCallback<Long, MoviePaging> callback) {
+        /**NOTE: the loadAfter method to write codes to fetch other pages.*/
 
         movieDataServicePart06 = RetrofitInstanceMoviePaging.getService();
         Call<MovieDBResponsePaging> call = movieDataServicePart06.getPopularMoviesWithPaging(application.getApplicationContext().getString(R.string.api_key), params.key);

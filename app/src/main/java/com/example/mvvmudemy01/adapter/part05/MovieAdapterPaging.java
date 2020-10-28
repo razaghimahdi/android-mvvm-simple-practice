@@ -26,7 +26,7 @@ public class MovieAdapterPaging extends PagedListAdapter<MoviePaging,MovieAdapte
     //private ArrayList<MoviePaging> movieArrayList;
 
     public MovieAdapterPaging(Context context/*, ArrayList<MoviePaging> movieArrayList*/) {
-        super(MoviePaging.CALLBACK);
+        super(MoviePaging.CALLBACK);/**NOTE: constructor of a pagedListAdapter should have a super class call with the diffutil of the entity.*/
         this.context = context;
         //this.movieArrayList = movieArrayList;
     }

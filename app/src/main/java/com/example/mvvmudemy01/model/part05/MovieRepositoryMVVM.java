@@ -23,9 +23,14 @@ import retrofit2.Response;
 
 public class MovieRepositoryMVVM {
 
+
+
     private ArrayList<MovieMvvm> movies = new ArrayList<>();
     private MutableLiveData<List<MovieMvvm>> mutableLiveData = new MutableLiveData<>();
-    private Application application;
+    private Application application;/**NOTE: how to get instance of application to repository?
+     * we can create a constructor for this repository class and keeping application as a parameter.
+     * Then we can use that application instance to get the string value of the API key.
+     * */
 
     public MovieRepositoryMVVM(Application application) {
         this.application = application;
@@ -33,13 +38,9 @@ public class MovieRepositoryMVVM {
 
 
     public MutableLiveData<List<MovieMvvm>> getMutableLiveData(){
-
-
         MovieDataServiceMvvm movieDataService = RetrofitInstanceMovieMvvm.getService();
 
         Call<MovieDBResponseMvvm> call = movieDataService.getPopularMovie(application.getApplicationContext().getString(R.string.api_key));
-
-
         call.enqueue(new Callback<MovieDBResponseMvvm>() {
             @Override
             public void onResponse(Call<MovieDBResponseMvvm> call, Response<MovieDBResponseMvvm> response) {
@@ -66,9 +67,6 @@ public class MovieRepositoryMVVM {
 
             }
         });
-
-
-
 
         return mutableLiveData;
     }
