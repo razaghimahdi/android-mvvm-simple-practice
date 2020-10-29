@@ -51,7 +51,8 @@ public class Part07WorkManagerActivity extends AppCompatActivity {
         WorkManager.getInstance().getWorkInfoByIdLiveData(oneTimeWorkRequest.getId())
                 .observe(this, new Observer<WorkInfo>() {
                     @Override
-                    public void onChanged(WorkInfo workInfo) {
+                    public void onChanged(WorkInfo workInfo) {/**workInfo.getState()
+                     */
                         txtstaus.setText(workInfo.getState().name());
                         if (workInfo.getState().isFinished()){
                             Data data1=workInfo.getOutputData();

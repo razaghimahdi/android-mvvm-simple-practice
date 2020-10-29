@@ -16,10 +16,12 @@ Not to create many Adapters
 To handle Call Backs easily
 Data binding for forms
 Set fonts directly to XML
+
 # Lifecycle Aware Components:
 We can create separate classes with lifecycle aware components we can create separate classes to observe the changes of lifecycle state and act accordingly.
 This helps us to create better-organized, and lighter-weight code, that is easier to maintain.
 <img src="screenshots/Activity-Lifecycle-in-Android.png" width="300">
+
 # View Model:
 In simple terms view model is the model class for a view. A class which keeps data for a view.
 If it is required, you can create separate view models for each activity or fragment in your application.
@@ -27,6 +29,7 @@ This class is designed to store and manage UI-related data in a lifecycle consci
 The ViewModel class allows data to survive configuration changes such as screen rotations, keyboard changes, language changes and enabling multi window mode.
 LiveData, LiveData is an observable data holder class. We can use live data to get real time updates for the user interfaces.LiveData only updates app component observers that are in an active lifecycle state.
 LiveData does not replace rxJava but it allows us to perform some tasks done by RxJava in a much easier manner.
+
 # Room:
 Room data persistence library is a great alternative to SQLite openHelper which have been used by Android developers for many years to work with SQLite databases.
 Room acts as wrapper around SQLite database. Room reduces a lot of boilerplate codes and makes your code base cleaner and much readable.
@@ -52,10 +55,15 @@ Room Database use Annotation to control database,Room Database has a least 20 An
 
 # Navigation:
 This components allow you to design the interactions that allow users to move across, into, and back our from the different content areas within your app.
+
 # Work Manager:
 There are a lot of Background processing tasks in an android application like Send Logs, upload data and Sync data with the server.
 You can create a background task and hand it off to WorkManager to run immediately or at an appropriate time.
 WorkManager choose the best way to run your task based on different factors such as the device API level and the app state.
+WE have been using different ways to do these such as: job Schedulers, Services, Loaders, Alarm Managers.
+But there are some difficulties they only support some SDK versions, it means you need to write codes to find the sdk versions and use an appropriate API.
+
+
 # Paging:
 This library makes it easier to load data to a recyclerView, step by step in your app using live data.
 This supports both large bounded list and unbounded lists, such as continuously updating feeds.
