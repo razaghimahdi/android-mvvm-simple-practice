@@ -23,7 +23,6 @@ import com.example.mvvmudemy01.view.Part06PagingActivity;
 import com.example.mvvmudemy01.view.part07.Part07WorkManagerActivity;
 import com.example.mvvmudemy01.view.part08.Part08NavigationActivity;
 import com.example.mvvmudemy01.view.roomView.Part02RoomdbActivity;
-import com.example.mvvmudemy01.viewmodel.Part04ViewModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -112,7 +111,6 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
                         Intent intent = new Intent(context, Part08NavigationActivity.class);
                         context.startActivity(intent);
                     }
-
                 }
             });
 

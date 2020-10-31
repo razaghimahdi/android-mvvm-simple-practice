@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         String title[] = {"ViewModel-LiveData",
                 "Room DB","Data-Binding",
                 "Simple-Project","Retrofit",
-                "Paging","Work-Manager","Navigation"};
+                "Paging","Work-Manager",
+                "Navigation" };
 
 
         for (int i = 0; i < title.length ; i++) {
