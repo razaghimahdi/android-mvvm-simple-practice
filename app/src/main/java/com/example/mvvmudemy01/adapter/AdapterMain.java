@@ -30,13 +30,13 @@ import java.util.List;
 
 public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
     private LayoutInflater inflater;
-    List<infoMain> data = Collections.emptyList();//in tori tarif mikonim ke agar list khali bood Error NullPointExeption nadagad
+    List<infoMain> data = Collections.emptyList();
     private Context context;
 
 
 
     public AdapterMain(Context context, List<infoMain> data){
-        inflater= LayoutInflater.from(context);//infalter moshakhas mikne ke kodom Amal tarsim koja bayad anjam shavad
+        inflater= LayoutInflater.from(context);
         this.data=data;
         this.context=context;
     }
@@ -48,12 +48,12 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
         View view = inflater.inflate(R.layout.custom_row, parent , false);
         ViewHolder holder = new ViewHolder(view);
 
-        return holder;//ba return krdn be ViewHolder extends RecyclerView.ViewHolder ferstade mishavad
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {//Bind yni etesal ya match kardan va har bar ba tekrar shodan dastorat dakhel method amal mikonad
-    infoMain cur = data.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        infoMain cur = data.get(position);
     holder.title.setText(cur.title);
         //Typeface font = Typeface.createFromAsset(context.getAssets(), "AGhasem.ttf");
        // holder.title.setTypeface(font);
@@ -65,7 +65,7 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.ViewHolder> {
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{//Karesh tanha etesal ba Component ha mibashad yni msl findviewbyId kar mikne
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView title;
         LinearLayout linear_main_row;
 
