@@ -29,6 +29,10 @@ This class is designed to store and manage UI-related data in a lifecycle consci
 The ViewModel class allows data to survive configuration changes such as screen rotations, keyboard changes, language changes and enabling multi window mode.
 LiveData, LiveData is an observable data holder class. We can use live data to get real time updates for the user interfaces.LiveData only updates app component observers that are in an active lifecycle state.
 LiveData does not replace rxJava but it allows us to perform some tasks done by RxJava in a much easier manner.
+##### When to use MutableLiveData and LiveData:
+LiveData has no public method to modify its data.You can't update its value like getUser().setValue(userObject) or getUser().postValue(userObject).
+So when you don't want your data to be modified use LiveData If you want to modify your data later use MutableLiveData.
+
 
 ##### Room:
 Room data persistence library is a great alternative to SQLite openHelper which have been used by Android developers for many years to work with SQLite databases.  
